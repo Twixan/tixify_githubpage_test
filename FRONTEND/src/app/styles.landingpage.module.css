@@ -1,0 +1,47 @@
+.LandingContainer {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.AnouncementBannerContainer {
+    width: 100%;
+    z-index: 10;
+}
+
+.HeaderContainer {
+    width: 100%;
+    z-index: 10;
+}
+
+.CardsContainer {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* border: 1px green solid; */
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    z-index: 10;
+}
+
+.BackgroundImage {
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    scale: 1;
+    overflow-x: hidden !important;
+}
+
+
+.ModalContainer {
+    border: 1px red solid;
+    z-index: 10;
+    width: 400px;
+}

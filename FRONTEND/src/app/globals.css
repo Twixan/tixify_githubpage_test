@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --global-blue: #214ee2;
+  --global-red: #f80d0d;
+  --global-white: #fff;
+  --global-light-gray: #adadad;
+  --global-dark-gray: #141414;
+  --global-light-gray-contrast: #efeeee;
+
+  --global-light-text: #dedede;
+  --global-light-icons: #edeaea;
+  --global-canvas-background-color:  #111111;
+
+  --global-border-radius-1: 7.5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: black;
+  overflow-x: hidden;
+}
+
+.card-hover-box-shadow:hover {
+  transition: box-shadow 0.2s ease-in-out;
+  box-shadow: 0 0 0 0 rgba(var(--foreground-rgb), 0.2);
+}
+.glowing-border {
+  box-shadow: 0 0 15px #703df1, 0 0 5px #703df1, 0 0 2px #703df1, 0 0 5px #703df1, 0 0 5px #703df1;
+  opacity: 1;
+}
