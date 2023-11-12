@@ -7,8 +7,8 @@ import dynamic from 'next/dynamic'
 import axios from 'axios';
 
 import LoadingSpinner from '../components_web/LoadingSpinner.jsx';
-import PurchaserTable from '../components_web/PurchaserTable'; 
 
+import CustomerTable from '../components_web/tables/CustomerTable.jsx'
 
 const TotalSalesChart = dynamic(
     () => import('../components_web/charts/TotalSalesChart.jsx'),
@@ -66,25 +66,29 @@ export default function LoginPage() {
 
     return (
         <div className={styles.DashboardContainer}> 
+        
             <div className={styles.Header}>
                 Celebration Connect nigga
             </div>
-            
-            <div className={styles.SalesChartContainer}>
-                <TotalSalesChart />
-            </div>
-    
-            <div className={styles.PurchaserTableContainer}>
-                <PurchaserTable /> {/* Use the PurchaserTable component */}
-            </div>
-    
-            <div className={styles.SalesCounter}>
-                <h1>
-                    {totalSales}
-                    {isLoading && < div className={styles.SalesCounterLoader}>
-                        < LoadingSpinner />
-                    </div>}
-                </h1>
+
+            <div className={styles.DashboardChartContainer}>
+                <div className={styles.SalesChartContainer}>
+                    <TotalSalesChart />
+                </div>
+        
+                <div className={styles.PurchaserTableContainer}>
+                    <CustomerTable /> 
+                </div>
+        
+                {/* <div className={styles.SalesCounter}>
+                    <h1>
+                        {totalSales}
+                        {isLoading && < div className={styles.SalesCounterLoader}>
+                            < LoadingSpinner />
+                        </div>}
+                    </h1>
+                    
+                </div> */}
             </div>
         </div>
     )

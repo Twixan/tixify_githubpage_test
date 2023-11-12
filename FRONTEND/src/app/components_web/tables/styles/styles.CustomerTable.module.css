@@ -1,0 +1,13 @@
+.TableWrapper {
+    background-color: #f6f6f6;
+    border-radius: 7.5px;
+    box-shadow: 0 0 15px #e0e0e0, 0 0 5px #e0e0e0, 0 0 2px #e0e0e0, 0 0 5px #e0e0e0, 0 0 5px #bcbcbc;
+}
+
+.SpinnerLoaderTimeframe {
+    position: absolute;
+    z-index: 1000;
+    top: 17.5%;
+    left: 50%;
+    transform: translate(-25%, -50%);
+}

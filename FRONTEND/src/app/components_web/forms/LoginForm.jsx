@@ -5,30 +5,30 @@ import styles from './styles/LoginForm.styles.module.css'
 const LoginForm = () => {
     return ( 
     <div className={styles.LoginFormWrapper}>
-        <div class="w-full max-w-md mx-auto">
-        <div class="bg-white rounded-xl">
-            <div class="p-4 sm:p-7">
+        <div className="w-full max-w-md mx-auto">
+        <div className="bg-white rounded-xl">
+            <div className="p-4 sm:p-7">
         
                 <form>
-                <div class="grid gap-y-4">
+                <div className="grid gap-y-4">
             
                     <div>
-                    <label for="email" class="block text-sm mb-2">Email</label>
-                    <div class="relative border border-gray-500 rounded-md">
+                    <label for="email" className="block text-sm mb-2">Email</label>
+                    <div className="relative border border-gray-500 rounded-md">
                         <input 
                         type="email" 
                         id="email" 
                         name="email" 
-                        class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500" 
+                        className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500" 
                         required 
                         aria-describedby="email-error"
                         placeholder="user@example.com"
                         >
 
                         </input>
-                        <div class="hidden absolute inset-y-0 right-0 flex items-center pointer-events-none pr-3">
+                        <div className="hidden absolute inset-y-0 right-0 flex items-center pointer-events-none pr-3">
                         <svg 
-                        class="h-5 w-5 text-red-500" 
+                        className="h-5 w-5 text-red-500" 
                         width="16" 
                         height="16" 
                         fill="currentColor" 
@@ -38,21 +38,21 @@ const LoginForm = () => {
                         </svg>
                         </div>
                     </div>
-                    <p class="hidden text-xs text-red-600 mt-2" id="email-error">Please include a valid email address so we can get back to you</p>
+                    <p className="hidden text-xs text-red-600 mt-2" id="email-error">Please include a valid email address so we can get back to you</p>
                     </div>
             
                     <div>
-                    <label for="password" class="block text-sm mb-2">Password</label>
-                    <div class="relative border border-gray-500 rounded-md">
+                    <label for="password" className="block text-sm mb-2">Password</label>
+                    <div className="relative border border-gray-500 rounded-md">
                         <input 
                         type="password" 
                         id="password" 
                         name="password" 
-                        class="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500"></input>
+                        className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500"></input>
                         <div 
-                        class="hidden absolute inset-y-0 right-0 flex items-center pointer-events-none pr-3">
+                        className="hidden absolute inset-y-0 right-0 flex items-center pointer-events-none pr-3">
                         <svg 
-                        class="h-5 w-5 text-red-500" 
+                        className="h-5 w-5 text-red-500" 
                         width="16" 
                         height="16" 
                         fill="currentColor" 
@@ -67,7 +67,7 @@ const LoginForm = () => {
             
                     <button 
                     type="submit" 
-                    class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm mt-3">Sign in
+                    className="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm mt-3">Sign in
                     </button>
                 </div>
                 </form>
