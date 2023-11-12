@@ -215,7 +215,7 @@ async def add_total_revenue_statistics_supabase(total_revenue: float, amount_of_
     
 async def fetch_active_tickets_count_supabase() -> int:
     """
-    Fetches the count of rows in the active_tickets table from supabase, ie amount of tickets sold
+    Fetches the count of rows in the active_tickets table from supabase, ie amount of tickets
     """
     try:
         response_supabase = supabase.table(TABLE_ACTIVE_TICKETS).select('id').execute()
@@ -229,22 +229,7 @@ async def fetch_active_tickets_count_supabase() -> int:
         print(e)
         return 0
     
-async def add_total_sales_statistics_supabase(total_sales: int) -> int:
-    """
-    Adds total sales to the supabase database
-    """
-    try:
-        response_supabase = supabase.table(TABLE_TOTAL_STATISTICS).insert({
-            TOTAL_SALES: total_sales
-        }).execute()
 
-        if response_supabase.data == []:
-            return 500
-        return 200 
-    
-    except Exception as e:
-        print(e)
-        return 500
     
 
 async def is_ticket_valid(ticket_hash: str) -> bool:

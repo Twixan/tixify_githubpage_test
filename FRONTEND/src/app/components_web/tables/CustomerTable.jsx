@@ -35,6 +35,8 @@ const CustomerTable = () => {
                 setTicketPurchaserPhoneNumber(PurchaserPhoneNumber);
                 const PurchaserCreatedAt = await GetCustomerCreatedAtById(userId);
                 setTicketCreatedAt(PurchaserCreatedAt);
+                const PurchaserEmailSent = await GetCustomerEmailSentById(userId);
+                setTicketEmailSent(PurchaserEmailSent);
 
                 setIsLoading(false);
             }
