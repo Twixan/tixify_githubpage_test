@@ -44,6 +44,13 @@ async def total_revenue():
     return {"total_revenue": ticket_total_price}
 
 
+@app.get("/total/sales")
+async def total_sales():
+    count_of_tickets = await supabase.fetch_active_tickets_count_supabase()
+
+    return {"total_sales": count_of_tickets}
+
+
 @app.get("/ticket/validate")
 async def ticket_validate(ticket_hash: str, api_key: str):
     try:

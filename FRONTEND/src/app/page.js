@@ -5,6 +5,7 @@ import Header from './components_web/Header.jsx'
 import AnouncementBanner from './components_web/AnouncementBanner.jsx'
 import Card1 from './components_web/cards/Card1.jsx'
 import Card2 from './components_web/cards/Card2.jsx'
+import Footer from  './components_web/Footer.jsx'
 
 
 const PAGENAME = () => {
@@ -16,9 +17,6 @@ const PAGENAME = () => {
       </div>
 
       
-      <header className={styles.HeaderContainer}>
-        <Header />
-      </header>
 
       <div className={styles.AnouncementBannerContainer}>
         <AnouncementBanner />
@@ -27,8 +25,10 @@ const PAGENAME = () => {
       <div className={styles.CardsContainer}>
         <Card1 />
         <Card2 />
-      
+       
       </div>
+      <Footer />
+  
     </div>
   )
 }

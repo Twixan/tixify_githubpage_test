@@ -42,3 +42,18 @@
     height: 46px;
     width: 46px;
 }
+
+.Header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* adjust as needed */
+    background: linear-gradient(to right, #ff9966, #ff5e62); /* adjust colors as needed */
+    color: white; /* adjust as needed */
+    font-size: 24px; /* adjust as needed */
+    font-weight: bold; /* adjust as needed */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* adjust as needed to ensure header is above other elements */
+}
+

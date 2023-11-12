@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic'
 import axios from 'axios';
 
 import LoadingSpinner from '../components_web/LoadingSpinner.jsx';
+import PurchaserTable from '../components_web/PurchaserTable'; 
 
 
 const TotalSalesChart = dynamic(
@@ -26,11 +27,34 @@ const fetchTotalSales = async () => {
     }
 }
 
+const ActiveTicketsCountEndpoint = 'https://tixify-production.up.railway.app/total/sales'
+
+const fetchActiveTicketsCount = async () => {
+    try {
+        const response = await axios.get(ActiveTicketsCountEndpoint);
+        return response.data.active_tickets_count;
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 
 export default function LoginPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [totalSales, setTotalSales] = useState(null);
+    const [activeTicketsCount, setActiveTicketsCount] = useState(null);
+
+    useEffect(() => {
+        setIsLoading(true); // Set loading to true before fetch starts
+        fetchTotalSales().then(data => {
+            setTotalSales(data);
+            setIsLoading(false); // Set loading to false when fetch is complete
+        });
+
+        fetchActiveTicketsCount().then(data => {
+            setActiveTicketsCount(data);
+        });
+    }, []);
 
     useEffect(() => {
         setIsLoading(true); // Set loading to true before fetch starts
@@ -42,11 +66,18 @@ export default function LoginPage() {
 
     return (
         <div className={styles.DashboardContainer}> 
+            <div className={styles.Header}>
+                Celebration Connect nigga
+            </div>
             
             <div className={styles.SalesChartContainer}>
                 <TotalSalesChart />
             </div>
-
+    
+            <div className={styles.PurchaserTableContainer}>
+                <PurchaserTable /> {/* Use the PurchaserTable component */}
+            </div>
+    
             <div className={styles.SalesCounter}>
                 <h1>
                     {totalSales}
@@ -54,9 +85,7 @@ export default function LoginPage() {
                         < LoadingSpinner />
                     </div>}
                 </h1>
-               
             </div>
-
         </div>
     )
 }
