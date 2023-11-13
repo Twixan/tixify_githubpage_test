@@ -45,10 +45,9 @@ async def total_revenue():
 
 
 @app.get("/total/sales")
-async def total_sales():
+async def total_tickets_sold():
     count_of_tickets = await supabase.fetch_active_tickets_count_supabase()
-
-    return {"total_sales": count_of_tickets}
+    return {"total_tickets_sold": count_of_tickets}
 
 
 @app.get("/ticket/validate")

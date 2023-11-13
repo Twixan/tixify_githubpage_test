@@ -4,7 +4,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Tixify',
+  title: 'Celebration Connect',
   description: 'A ticketing platform for the modern web by Hadi',
 }
 

@@ -27,12 +27,12 @@ const fetchTotalSales = async () => {
     }
 }
 
-const ActiveTicketsCountEndpoint = 'https://tixify-production.up.railway.app/total/sales'
+const ActiveTicketsCountEndpoint = 'http://localhost:8000/total/sales'
 
 const fetchActiveTicketsCount = async () => {
     try {
         const response = await axios.get(ActiveTicketsCountEndpoint);
-        return response.data.active_tickets_count;
+        return response.data.total_tickets_sold;
     } catch (error) {
         console.error(error);
     }
@@ -66,29 +66,43 @@ export default function LoginPage() {
 
     return (
         <div className={styles.DashboardContainer}> 
-        
+    
             <div className={styles.Header}>
                 Celebration Connect nigga
             </div>
-
+    
+            <div className={styles.CountersContainer}>
+                <div className={styles.SalesCounter}>
+                    <h1>
+                    <span>Total Sales: </span>
+                        {totalSales}
+                        <span> kr</span>
+                        {isLoading && <div className={styles.SalesCounterLoader}>
+                            <LoadingSpinner />
+                        </div>}
+                    </h1>
+                </div>
+    
+                <div className={styles.TicketCounter}>
+                    <h1>
+                    <span>Total Tickets: </span>
+                        {activeTicketsCount}
+                        <span> st</span>
+                        {isLoading && <div className={styles.TicketCounterLoader}>
+                            <LoadingSpinner />
+                        </div>}
+                    </h1>
+                </div>
+            </div>
+    
             <div className={styles.DashboardChartContainer}>
                 <div className={styles.SalesChartContainer}>
                     <TotalSalesChart />
                 </div>
-        
-                <div className={styles.PurchaserTableContainer}>
+    
+                <div className={styles.CustomerTableContainer}>
                     <CustomerTable /> 
                 </div>
-        
-                {/* <div className={styles.SalesCounter}>
-                    <h1>
-                        {totalSales}
-                        {isLoading && < div className={styles.SalesCounterLoader}>
-                            < LoadingSpinner />
-                        </div>}
-                    </h1>
-                    
-                </div> */}
             </div>
         </div>
     )

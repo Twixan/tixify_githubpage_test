@@ -218,18 +218,17 @@ async def fetch_active_tickets_count_supabase() -> int:
     Fetches the count of rows in the active_tickets table from supabase, ie amount of tickets
     """
     try:
-        response_supabase = supabase.table(TABLE_ACTIVE_TICKETS).select('id').execute()
+        response_supabase = await supabase.from_(TABLE_ACTIVE_TICKETS).select('*', count='exact')
 
-        if response_supabase.data == []:
-            return 0
-        count_of_tickets = len(response_supabase.data)
+        if response_supabase.error:
+             raise Exception(response_supabase.error)
+
+        count_of_tickets = response_supabase.count
         return count_of_tickets
-    
+
     except Exception as e:
         print(e)
         return 0
-    
-
     
 
 async def is_ticket_valid(ticket_hash: str) -> bool:

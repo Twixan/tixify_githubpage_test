@@ -1,9 +1,11 @@
 .DashboardContainer {
     height: 100vh;
     width: 100vw;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
+    
+    
 }
 
 .SalesChartContainer {
@@ -11,29 +13,48 @@
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0 0 10px #9122a0, 0 0 3px #9122a0, 0 0 2px #9122a0, 0 0 5px #9122a0, 0 0 5px #bcbcbc;
+
 }
 
 .SalesCounter {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid lightgray;
+    border: 1px solid rgb(89, 30, 145);
     width: fit-content;
     font-size: 20px;
     font-weight: 600;
-    position: relative;
-    top: 550px;
-    left: 30%;
     z-index: 1;
-    height: 46px;
-    width: 46px;
+    margin: 20px 20px;
+    box-shadow: 0 0 10px #9122a0, 0 0 3px #9122a0, 0 0 2px #9122a0, 0 0 5px #9122a0, 0 0 5px #bcbcbc;
 }
+
+.TicketCounter {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(89, 30, 145);
+    width: fit-content;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 1;
+    margin: 20px 20px;
+    box-shadow: 0 0 10px #9122a0, 0 0 3px #9122a0, 0 0 2px #9122a0, 0 0 5px #9122a0, 0 0 5px #bcbcbc;
+}
+
+.CountersContainer {
+    display: flex;
+    justify-content: center;
+    gap: 0px; /* adjust as needed */
+}
+
+
 
 .Header {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50px; /* adjust as needed */
-    background: linear-gradient(to right, #ff9966, #ff5e62); /* adjust colors as needed */
+    background: linear-gradient(to right, #d088df, #460342); /* adjust colors as needed */
     color: white; /* adjust as needed */
     font-size: 24px; /* adjust as needed */
     font-weight: bold; /* adjust as needed */
@@ -44,10 +65,22 @@
 
 
 
-.PurchaserTableContainer {
+.CustomerTableContainer {
     display: flex;
     margin-left: auto;
     margin-right: auto;
     width: 35%;
     margin-top: 35px;
+    flex-wrap: wrap;
+
+}
+
+/* Selects even rows */
+.CustomerTableContainer tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey color */
+}
+
+/* Selects odd rows */
+.CustomerTableContainer tr:nth-child(odd) {
+    background-color: #e0d8e0; /* White color */
 }
